@@ -276,9 +276,9 @@ p { margin: 0 0 1em; max-width: 64ch; }
 
 /* ---------- gallery ---------- */
 .gallery { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 1rem; }
-.gallery button { all: unset; cursor: zoom-in; display: block; width: 100%; position: relative; border-radius: var(--r-sm); overflow: hidden; background: var(--flashing); }
+.gallery button { all: unset; cursor: zoom-in; display: block; width: 100%; height: 100%; position: relative; border-radius: var(--r-sm); overflow: hidden; background: var(--flashing); }
 .gallery button:focus-visible { outline: 3px solid var(--ladder); outline-offset: 3px; }
-.gallery img { width: 100%; object-fit: cover; transition: transform .4s; aspect-ratio: 3 / 2; }
+.gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; aspect-ratio: 3 / 2; }
 .gallery button:hover img { transform: scale(1.03); }
 .gallery figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 2.2rem .9rem .8rem; color: var(--white); font-size: .9rem; font-weight: 600; background: linear-gradient(transparent, rgba(20, 23, 26, .82)); }
 .g-wide { grid-column: span 7; }
