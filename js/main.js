@@ -136,27 +136,28 @@
   /* ---------- town checker ---------- */
   var search = $("#town-search");
   if (search) {
-    var result = $("#town-result");
-    var lis = $$("#town-list li");
-    var suffolk = ["huntington", "smithtown"];
+    var result = $("#town-result"), resultText = $("span", result), resultIcon = $("use", result);
+    var towns = $("#towns");
+    var lis = $$("#town-list li, #suffolk-list li");
+    var say = function (level, icon, msg) {
+      result.className = "town-result" + (level ? " " + level : "");
+      resultIcon.setAttribute("href", icon);
+      resultText.textContent = msg;
+    };
     search.addEventListener("input", function () {
       var q = search.value.trim().toLowerCase();
       lis.forEach(function (li) { li.classList.remove("is-match"); });
-      result.className = "town-result";
-      if (!q) { result.textContent = "Start typing and we'll check."; return; }
+      towns.classList.remove("is-filtering");
+      if (!q) { say("", "#i-map-pin", "Start typing and we'll check."); return; }
       var hit = lis.filter(function (li) { return li.textContent.toLowerCase().indexOf(q) === 0; });
       if (hit.length) {
         hit.forEach(function (li) { li.classList.add("is-match"); });
-        result.classList.add("yes");
-        result.textContent = hit.length === 1
+        towns.classList.add("is-filtering");
+        say("yes", "#i-badge-check", hit.length === 1
           ? "Yes, we roof homes in " + hit[0].textContent + "."
-          : "Yes, we cover " + hit.map(function (l) { return l.textContent; }).join(", ") + ".";
-      } else if (suffolk.some(function (s) { return s.indexOf(q) === 0; })) {
-        result.classList.add("yes");
-        result.textContent = "Yes, we work in that part of Suffolk County.";
+          : "Yes, we cover " + hit.map(function (l) { return l.textContent; }).join(", ") + ".");
       } else {
-        result.classList.add("maybe");
-        result.textContent = "We likely cover it. Call (516) 805-0400 and we'll confirm your street.";
+        say("maybe", "#i-phone", "We likely cover it. Call (516) 805-0400 and we'll confirm your street.");
       }
     });
   }

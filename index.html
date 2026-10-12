@@ -417,6 +417,11 @@
       <div>
         <h2 id="area-title">Do we cover your town?</h2>
         <p class="lede">We're based in Nassau County and work across Nassau and Suffolk, from the North Shore to the South Shore.</p>
+        <ul class="area-stats">
+          <li><b>20+</b><span>Nassau towns</span></li>
+          <li><b>2</b><span>Counties served</span></li>
+          <li><b>25+</b><span>Years on Long Island</span></li>
+        </ul>
         <div class="town-check">
           <div class="field">
             <label for="town-search">Type your town</label>
@@ -425,35 +430,50 @@
               <input id="town-search" type="search" placeholder="e.g. Wantagh" autocomplete="address-level2">
             </div>
           </div>
-          <p class="town-result" id="town-result" aria-live="polite">Start typing and we'll check.</p>
+          <p class="town-result" id="town-result" aria-live="polite"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg><span>Start typing and we'll check.</span></p>
+          <a class="btn btn-primary btn-block" href="#estimate">Book a free estimate</a>
         </div>
       </div>
-      <div class="towns">
-        <h3>Nassau County</h3>
-        <ul class="town-list" id="town-list">
-          <li><a href="https://affordableroofinglongisland.com/bellmore-roofing.html">Bellmore</a></li>
-          <li><a href="https://affordableroofinglongisland.com/brookville-roofing.html">Brookville</a></li>
-          <li><a href="https://affordableroofinglongisland.com/east-hills-roofing.html">East Hills</a></li>
-          <li><a href="https://affordableroofinglongisland.com/glen-cove-roofing.html">Glen Cove</a></li>
-          <li><a href="https://affordableroofinglongisland.com/glen-head-roofing.html">Glen Head</a></li>
-          <li><a href="https://affordableroofinglongisland.com/jericho-roofing.html">Jericho</a></li>
-          <li><a href="https://affordableroofinglongisland.com/levittown-roofing.html">Levittown</a></li>
-          <li><a href="https://affordableroofinglongisland.com/manhasset-roofing.html">Manhasset</a></li>
-          <li><a href="https://affordableroofinglongisland.com/massapequa-roofing.html">Massapequa</a></li>
-          <li><a href="https://affordableroofinglongisland.com/merrick-roofing.html">Merrick</a></li>
-          <li><a href="https://affordableroofinglongisland.com/muttontown-roofing.html">Muttontown</a></li>
-          <li><a href="https://affordableroofinglongisland.com/new-hyde-park-roofing.html">New Hyde Park</a></li>
-          <li><a href="https://affordableroofinglongisland.com/old-westbury-roofing.html">Old Westbury</a></li>
-          <li><a href="https://affordableroofinglongisland.com/oyster-bay-roofing.html">Oyster Bay</a></li>
-          <li><a href="https://affordableroofinglongisland.com/plainview-roofing.html">Plainview</a></li>
-          <li><a href="https://affordableroofinglongisland.com/port-washington-roofing.html">Port Washington</a></li>
-          <li><a href="https://affordableroofinglongisland.com/seaford-roofing.html">Seaford</a></li>
-          <li><a href="https://affordableroofinglongisland.com/syosset-roofing.html">Syosset</a></li>
-          <li><a href="https://affordableroofinglongisland.com/wantagh-roofing.html">Wantagh</a></li>
-          <li><a href="https://affordableroofinglongisland.com/woodbury-roofing.html">Woodbury</a></li>
-        </ul>
-        <h3>Suffolk County</h3>
-        <p>We roof homes across Suffolk too, including Huntington and Smithtown. Call and we'll confirm your street.</p>
+      <div class="towns" id="towns">
+        <div class="county">
+          <div class="county-head">
+            <h3>Nassau County</h3>
+            <span class="county-tag">Home base</span>
+          </div>
+          <ul class="town-list" id="town-list">
+              <li><a href="https://affordableroofinglongisland.com/bellmore-roofing.html"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Bellmore</a></li>
+              <li><a href="https://affordableroofinglongisland.com/brookville-roofing.html"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Brookville</a></li>
+              <li><a href="https://affordableroofinglongisland.com/east-hills-roofing.html"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>East Hills</a></li>
+              <li><a href="https://affordableroofinglongisland.com/glen-cove-roofing.html"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Glen Cove</a></li>
+              <li><a href="https://affordableroofinglongisland.com/glen-head-roofing.html"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Glen Head</a></li>
+              <li><a href="https://affordableroofinglongisland.com/jericho-roofing.html"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Jericho</a></li>
+              <li><a href="https://affordableroofinglongisland.com/levittown-roofing.html"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Levittown</a></li>
+              <li><a href="https://affordableroofinglongisland.com/manhasset-roofing.html"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Manhasset</a></li>
+              <li><a href="https://affordableroofinglongisland.com/massapequa-roofing.html"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Massapequa</a></li>
+              <li><a href="https://affordableroofinglongisland.com/merrick-roofing.html"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Merrick</a></li>
+              <li><a href="https://affordableroofinglongisland.com/muttontown-roofing.html"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Muttontown</a></li>
+              <li><a href="https://affordableroofinglongisland.com/new-hyde-park-roofing.html"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>New Hyde Park</a></li>
+              <li><a href="https://affordableroofinglongisland.com/old-westbury-roofing.html"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Old Westbury</a></li>
+              <li><a href="https://affordableroofinglongisland.com/oyster-bay-roofing.html"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Oyster Bay</a></li>
+              <li><a href="https://affordableroofinglongisland.com/plainview-roofing.html"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Plainview</a></li>
+              <li><a href="https://affordableroofinglongisland.com/port-washington-roofing.html"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Port Washington</a></li>
+              <li><a href="https://affordableroofinglongisland.com/seaford-roofing.html"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Seaford</a></li>
+              <li><a href="https://affordableroofinglongisland.com/syosset-roofing.html"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Syosset</a></li>
+              <li><a href="https://affordableroofinglongisland.com/wantagh-roofing.html"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Wantagh</a></li>
+              <li><a href="https://affordableroofinglongisland.com/woodbury-roofing.html"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Woodbury</a></li>
+          </ul>
+        </div>
+        <div class="county">
+          <div class="county-head">
+            <h3>Suffolk County</h3>
+            <span class="county-tag alt">Also served</span>
+          </div>
+          <ul class="town-list" id="suffolk-list">
+            <li><span><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Huntington</span></li>
+            <li><span><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Smithtown</span></li>
+          </ul>
+          <p>We roof homes across Suffolk too. Don't see your town? <a href="tel:+15168050400">Call (516) 805-0400</a> and we'll confirm your street.</p>
+        </div>
       </div>
     </div>
   </section>

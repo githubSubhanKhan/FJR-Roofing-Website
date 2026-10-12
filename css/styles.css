@@ -308,19 +308,41 @@ p { margin: 0 0 1em; max-width: 64ch; }
 
 /* ---------- service area ---------- */
 .area { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
-.town-check { background: var(--white); border-radius: var(--r-md); padding: 1.5rem; }
+.area-stats { list-style: none; padding: 0; margin: 0 0 1.5rem; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; }
+.area-stats li { background: var(--white); border-top: 4px solid var(--ladder); border-radius: 0 0 var(--r-md) var(--r-md); padding: .9rem 1rem 1rem; }
+.area-stats b { display: block; font-stretch: var(--wide); font-weight: 900; font-size: var(--step-2); line-height: 1; }
+.area-stats span { display: block; margin-top: .4rem; font-size: .85rem; line-height: 1.3; color: var(--muted); }
+
+/* checker: dark card, like the repair-or-replace verdict */
+.town-check { background: var(--asphalt); color: var(--white); border-radius: var(--r-md); padding: clamp(1.25rem, 3vw, 1.75rem); box-shadow: 0 30px 60px -30px rgba(35, 39, 43, .55); }
+.town-check label { color: var(--flashing); }
 .town-input { position: relative; }
-.town-input .icon { position: absolute; left: .9rem; top: 50%; transform: translateY(-50%); color: var(--muted); }
-.town-input input { padding-left: 2.8rem; }
-.town-result { margin: 1rem 0 0; min-height: 3.2em; font-weight: 600; }
-.town-result.yes { color: var(--ok); }
-.town-result.maybe { color: var(--slate); }
-.towns h3 { font-size: 1rem; font-stretch: var(--semi); margin: 0 0 .8rem; }
-.town-list { list-style: none; padding: 0; margin: 0 0 1.8rem; columns: 3 160px; column-gap: 1.5rem; }
-.town-list li { padding: .3rem 0; break-inside: avoid; }
-.town-list a { color: var(--asphalt); text-decoration-color: var(--flashing); }
-.town-list a:hover { text-decoration-color: var(--ladder); }
-.town-list .is-match a { background: var(--ladder); text-decoration: none; padding: 0 .25rem; }
+.town-input .icon { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--muted); }
+#town-search { min-height: 58px; padding-left: 2.9rem; border-color: var(--white); font-size: 1.05rem; }
+#town-search:focus { border-color: var(--ladder); box-shadow: 0 0 0 3px rgba(242, 183, 5, .35); }
+.town-result { display: flex; align-items: center; gap: .6rem; max-width: none; margin: 1rem 0 1.25rem; padding: .85rem 1rem; min-height: 4.6em; border-radius: var(--r-sm); background: rgba(255, 255, 255, .06); color: #D3D9DD; font-weight: 600; line-height: 1.4; transition: background-color .2s, color .2s; }
+.town-result .icon { color: var(--ladder); }
+.town-result.yes { background: rgba(143, 214, 168, .12); color: #8FD6A8; }
+.town-result.yes .icon { color: #8FD6A8; }
+.town-result.maybe { background: rgba(242, 183, 5, .12); color: var(--white); }
+
+/* county cards with town pills */
+.towns { display: grid; gap: 1rem; }
+.county { background: var(--white); border-radius: var(--r-md); padding: clamp(1.25rem, 3vw, 1.75rem); }
+.county-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.1rem; padding-bottom: 1rem; border-bottom: 2px solid var(--galv); }
+.county-head h3 { margin: 0; font-size: var(--step-1); font-stretch: var(--wide); }
+.county-tag { flex: none; padding: .3rem .7rem; border-radius: 999px; background: var(--asphalt); color: var(--ladder); font-size: .75rem; font-weight: 700; font-stretch: var(--semi); letter-spacing: .06em; text-transform: uppercase; }
+.county-tag.alt { background: var(--galv); color: var(--slate); }
+.county > p { margin: 1.1rem 0 0; font-size: .95rem; color: var(--slate); }
+.town-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+.town-list li { transition: opacity .2s; }
+.town-list li > a, .town-list li > span { display: inline-flex; align-items: center; gap: .4rem; padding: .45rem .9rem .45rem .7rem; border: 2px solid var(--flashing); border-radius: 999px; background: var(--white); color: var(--asphalt); font-size: .95rem; font-weight: 600; text-decoration: none; transition: background-color .15s, border-color .15s, color .15s, transform .15s, box-shadow .15s; }
+.town-list .icon { width: 1rem; height: 1rem; color: var(--bay); }
+.town-list li > a:hover { background: var(--asphalt); border-color: var(--asphalt); color: var(--white); }
+.town-list li > a:hover .icon { color: var(--ladder); }
+.town-list .is-match > a, .town-list .is-match > span { background: var(--ladder); border-color: var(--ladder); color: var(--asphalt); box-shadow: 0 3px 0 var(--ladder-dark); transform: translateY(-2px); }
+.town-list .is-match .icon { color: var(--asphalt); }
+.towns.is-filtering .town-list li:not(.is-match) { opacity: .4; }
 
 /* ---------- faq ---------- */
 .faq-layout { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
@@ -445,4 +467,3 @@ p { margin: 0 0 1em; max-width: 64ch; }
 }
 .site-footer { border-top: 1px solid #3B4249; }
 .site-footer .brand img { box-shadow: 0 0 0 1px #4A5560; border-radius: 10px; }
-#town-search { padding-left: 2.8rem; }
